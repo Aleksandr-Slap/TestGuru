@@ -10,20 +10,36 @@ categories = Category.create([{
 p "Created #{Category.count} categories"
 
 
-# byebug
+User.destroy_all
+
+
+users = User.create!([{
+  name: "Sasha",
+  email: "Sasha@gmail.com"
+},
+  {name: "Valera",
+  email: "Valera@gmail.com" 
+}])    
+
+
+p "Created #{User.count} users"
+
+
 
 Test.destroy_all
 
+
+
 tests = Test.create([{
-  title: "Ruby", level: 1, category_id: categories[1].id
+  title: "Ruby", level: 1, category_id: categories[1].id, user_id: users[0].id
 },
-  {title: "Rails", level: 1, category_id: categories[1].id
+  {title: "Rails", level: 2, category_id: categories[1].id, user_id: users[0].id
 },
-  {title: "HTML", level: 1, category_id: categories[0].id
+  {title: "HTML", level: 3, category_id: categories[0].id, user_id: users[0].id
 }])     
 
-p "Created #{Test.count} tests"
 
+p "Created #{Test.count} tests"
 
 
 
@@ -68,16 +84,3 @@ p "Created #{Answer.count} answers"
 
 
 
-User.destroy_all
-
-# byebug
-
-users = User.create!([{
-  name: "Sasha"
-},
-  {name: "Valera" 
-}])    
-# user = User.create(name: "Sasha")
-
-
-p "Created #{User.count} users"
