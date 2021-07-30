@@ -5,7 +5,6 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   def result(level)
-	  tests.where(level: level)
-	end
-
+    tests.where(level: level)
+  end
 end

@@ -61,7 +61,7 @@ Answer.destroy_all
 
 answers = Answer.create([{
   body: "Document markup language 
-	                      for web browsing in a browser",
+                        for web browsing in a browser",
   question_id: questions[0].id
 },
   {body: "Numbers.Boolean.Strings.Hashes.

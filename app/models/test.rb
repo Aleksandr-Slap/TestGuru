@@ -6,16 +6,14 @@ class Test < ApplicationRecord
 
   validates :title, :level, presence: true 
   validates :level, numericality: { only_integer: true, greater_than: 0 }
-  validates :title, uniqueness: { scope: :level }                  
+  validates :title, uniqueness: { scope: :level }
 
   scope :tests_easy, -> { where(level: 0..1) }
   scope :tests_middle, -> { where(level: 2..4) }
   scope :tests_hard, -> { where(level: 5..) }
-  scope :show_tests, -> { self.joins(:category).all }
+  scope :show_tests, -> (name_category) { joins(:category).where(categories: {title: name_category}) }
   
   def self.show_category_tests(name_category)
-    show_tests.where(categories: {title: name_category}).order('tests.title DESC').pluck('tests.title')
+    show_tests(name_category).order('tests.title DESC').pluck('tests.title')
   end
-
 end
-  
