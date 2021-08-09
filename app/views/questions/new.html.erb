@@ -1,0 +1,16 @@
+ <h1>Add a question:</h1>
+<%= form_with model: [ @test, @test.questions.build ] do |form| %>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<li><%= link_to "Destroy question", [@question.test, @question],
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+                    
+</li>

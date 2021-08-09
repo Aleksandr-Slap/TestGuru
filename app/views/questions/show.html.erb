@@ -1,0 +1,9 @@
+<h1>Question</h1>
+
+<ul>
+	<%=@question.body%>
+</ul>
+
+<li><%= link_to "Destroy", test_question_path(@question),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
