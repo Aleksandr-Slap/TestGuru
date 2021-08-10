@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'tests#index'
+  root to: "questions#index"
 
   resources :tests do
     resources :questions

@@ -1,0 +1,13 @@
+<h1>All test questions</h1>
+
+<h2><%=@test.title%></h2>
+
+<ul>
+  <%@test.questions.each do |question|%>
+    <li>
+      <%=question.body%>
+    </li>  
+  <% end %>  
+	
+
+</ul>

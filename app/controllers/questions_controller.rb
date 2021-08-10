@@ -1,39 +1,44 @@
 class QuestionsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
-  
+
+  before_action :set_test, only: %i[index show new edit destroy]
+
   def index
-    test = Test.find(params[:test_id])
-    render plain: [test.questions]
+    set_test
   end 
 
   def show
-    @test = Test.find(params[:test_id])
-    @question = @test.questions.find(params[:id])
-    byebug
+    # byebug
+    set_test
+    @question = @test.questions.find(params[:id]) || record_not_found
   end
 
   def new
-    @test = Test.find(params[:test_id])
+    set_test
     @question = @test.questions.find_by(id:params[:id])
   end	
 
   def create
-    @test = Test.find(params[:test_id])
+    set_test
     @question = @test.questions.create(question_params)
-    redirect_to test_path(@test)
+    render plain: "Question create"
   end
 
   def destroy
-    @test = Test.find(params[:test_id])
-    @question = Question.find(params[:id])
+    set_test
+    @question = Question.find(params[:id]) || record_not_found
     @question.destroy
-    redirect_to root_path
+    render plain: "Test delete"
   end
 
   private
 
   def question_params
     params.require(:question).permit(:body)
-  end	
+  end
+
+  def set_test
+    @test = Test.find(params[:test_id])
+  end  
 end
