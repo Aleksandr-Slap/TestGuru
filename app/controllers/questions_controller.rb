@@ -1,15 +1,19 @@
 class QuestionsController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
   skip_before_action :verify_authenticity_token
 
-  before_action :set_test, only: %i[index new create edit ]
+  before_action :set_test, only: %i[ index new create edit ]
+
+  before_action :set_question, only: %i[ show destroy ]
 
   def index
     
   end 
 
   def show
-    @question = Question.find(params[:id])
+    
   end
 
   def new
@@ -26,7 +30,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
     render plain: "Test delete"
   end
@@ -39,5 +42,13 @@ class QuestionsController < ApplicationController
 
   def set_test
     @test = Test.find(params[:test_id])
-  end  
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
+  end 
+
+  def record_not_found
+      render plain: "404 No question found", status: 404
+    end 
 end
