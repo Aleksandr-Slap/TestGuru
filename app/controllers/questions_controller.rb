@@ -2,32 +2,31 @@ class QuestionsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-  before_action :set_test, only: %i[index show new edit destroy]
+  before_action :set_test, only: %i[index new create edit ]
 
   def index
-    set_test
+    
   end 
 
   def show
-    # byebug
-    set_test
-    @question = @test.questions.find(params[:id]) || record_not_found
+    @question = Question.find(params[:id])
   end
 
   def new
-    set_test
-    @question = @test.questions.find_by(id:params[:id])
+    
   end	
 
   def create
-    set_test
     @question = @test.questions.create(question_params)
-    render plain: "Question create"
+    if @question.save
+      render plain: "Question create"
+    else
+      render plain: "Incorrect data entered"
+    end  
   end
 
   def destroy
-    set_test
-    @question = Question.find(params[:id]) || record_not_found
+    @question = Question.find(params[:id])
     @question.destroy
     render plain: "Test delete"
   end
