@@ -5,24 +5,11 @@ class TestsController < ApplicationController
   end 
 
   def show
-     # render ""
     @test = Test.find(params[:id])
   end 
 
   def new
     
   end
-
-  # def create
-  #   test = Test.create(test_params)
-
-  #   render plain: test.inspect
-  # end 
-
-  # private
- 
-  # def test_params
-  #   params.require(:test).permit(:title, :level)
-  # end
 end   
 

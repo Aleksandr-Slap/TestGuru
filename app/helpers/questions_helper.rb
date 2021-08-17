@@ -5,13 +5,5 @@ module QuestionsHelper
     else 
       "Edit #{question.test.title} Question" 
     end  
-  end 
-
-  def this_year
-    Time.now.year
-  end
-  
-  def github_url
-    "https://github.com/Aleksandr-Slap/TestGuru"
-  end   
+  end    
 end

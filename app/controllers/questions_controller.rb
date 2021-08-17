@@ -18,10 +18,10 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.build
-  end	
+  end 
 
   def edit
-    # @test = Test.find(@question.test_id)
+
   end   
 
   def create
@@ -29,15 +29,15 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to(@test)
     else
-      render "new"
+      render :new
     end  
   end
 
   def update
     if @question.update(question_params)
-      render "show"
+      render :show
     else
-      render "edit"
+      render :edit
     end      
   end   
 
