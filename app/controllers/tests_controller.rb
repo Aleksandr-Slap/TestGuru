@@ -1,27 +1,28 @@
 class TestsController < ApplicationController
 
-#   def index
-#     @tests = Test.all
-#   end 
+  def index
+    @tests = Test.all
+  end 
 
-#   def show
-#     # byebug
-#     @test = Test.find(params[:id])
-#   end 
+  def show
+     # render ""
+    @test = Test.find(params[:id])
+  end 
 
-#   def new
+  def new
     
-#   end
+  end
 
-#   def create
-#     test = Test.create(test_params)
+  # def create
+  #   test = Test.create(test_params)
 
-#     render plain: test.inspect
-#   end 
+  #   render plain: test.inspect
+  # end 
 
-#   private
+  # private
  
-#   def test_params
-#     params.require(:test).permit(:title, :level)
-#   end 
+  # def test_params
+  #   params.require(:test).permit(:title, :level)
+  # end
+end   
 

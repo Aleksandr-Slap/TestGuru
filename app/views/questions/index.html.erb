@@ -1,6 +1,10 @@
-<h1>All test questions</h1>
+<h1><%=@test.title%></h2>
 
-<h2><%=@test.title%></h2>
+<h2>Questions:</h2> 
+
+<p>
+  <%= link_to 'New question', new_test_question_path %>
+</p>  
 
 <ul>
   <%@test.questions.each do |question|%>
@@ -8,6 +12,5 @@
       <%=question.body%>
     </li>  
   <% end %>  
-	
-
 </ul>
+
