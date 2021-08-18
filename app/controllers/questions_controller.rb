@@ -4,34 +4,45 @@ class QuestionsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-  before_action :set_test, only: %i[ index new create edit ]
+  before_action :set_test, only: %i[ index new create ]
 
-  before_action :set_question, only: %i[ show destroy ]
+  before_action :set_question, only: %i[ show edit update destroy ]
 
   def index
     
   end 
 
   def show
-    
+  
   end
 
   def new
-    
-  end	
+    @question = @test.questions.build
+  end 
+
+  def edit
+
+  end   
 
   def create
-    @question = @test.questions.create(question_params)
+    @question = @test.questions.new(question_params)
     if @question.save
-      render plain: "Question create"
+      redirect_to(@test)
     else
-      render plain: "Incorrect data entered"
+      render :new
     end  
   end
 
+  def update
+    if @question.update(question_params)
+      render :show
+    else
+      render :edit
+    end      
+  end   
+
   def destroy
     @question.destroy
-    render plain: "Test delete"
   end
 
   private
@@ -49,6 +60,6 @@ class QuestionsController < ApplicationController
   end 
 
   def record_not_found
-      render plain: "404 No question found", status: 404
-    end 
+    render plain: "404 No question found", status: 404
+  end 
 end
