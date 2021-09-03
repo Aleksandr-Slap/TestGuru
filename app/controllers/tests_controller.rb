@@ -37,8 +37,6 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test = Test.find(params[:id])
-
     @test.destroy
     redirect_to tests_path
   end 

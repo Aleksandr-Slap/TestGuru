@@ -3,15 +3,13 @@ class TestPassage < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: "Question", optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
+  before_validation :set_first_question, on: :create
   before_validation :assign_next_question, on: :update
 
+  TEST_PASS_PERCENTAGE = 85.freeze
+
   def passed_the_test?
-    if success_rate >= 85
-      true
-    else
-      false 
-    end    
+    success_rate >= TEST_PASS_PERCENTAGE    
   end
 
   def success_rate
@@ -37,7 +35,7 @@ class TestPassage < ApplicationRecord
 
   private
 
-  def before_validation_set_first_question
+  def set_first_question
     self.current_question = test.questions.first if test.present?
   end 
 
