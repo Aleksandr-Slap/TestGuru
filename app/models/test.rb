@@ -1,11 +1,12 @@
 class Test < ApplicationRecord
+  has_many :test_passages
+  has_many :users, through: :test_passages
   has_many :questions
   belongs_to :category
-  has_and_belongs_to_many :users
   belongs_to :author, class_name: "User", foreign_key: :user_id
 
   validates :title, :level, presence: true 
-  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :level, numericality: { only_integer: true, greater_than: -1 }
   validates :title, uniqueness: { scope: :level }
 
   scope :tests_easy, -> { where(level: 0..1) }
