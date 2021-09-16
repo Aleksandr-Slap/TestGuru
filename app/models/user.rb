@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true
   validates :password, confirmation: true
+  validates :email, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP,
                            message: "@ and '.' should be used" }
 

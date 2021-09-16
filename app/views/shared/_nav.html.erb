@@ -2,7 +2,7 @@
     
 <% if logged_in? %>
   <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p> 
-  <p class="nav user"><b><%= link_to "Exit", sessions_path %></b></p>
+  <p class="nav user"><%= link_to '<button type="button">Exit</button>'.html_safe, logout_path %></p>  
 <% end %>
 
 <% unless current_user %>
