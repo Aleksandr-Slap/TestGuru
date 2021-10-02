@@ -1,12 +1,11 @@
 <h2 class="nav user"><%= link_to "TestGuru", tests_path %></h>
     
-<% if logged_in? %>
-  <p class="nav user">Welcome, <b><%= current_user.email %></b> Guru</p> 
-  <p class="nav user"><%= link_to '<button type="button">Exit</button>'.html_safe, logout_path %></p>  
+<% if user_signed_in? %>
+  <p class="nav user"> 
+    Welcome, <d><%= current_user.email %></d> Guru |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </p>   
 <% end %>
 
-<% unless current_user %>
-  <p class="nav user"><b>Please login to continue</b></p> 
-  <p class="nav user"><b><%= link_to "Registration", signup_path %> <%= link_to "Login", login_path %> </b></p>  
-<% end %>
+
     
