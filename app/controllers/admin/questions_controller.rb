@@ -1,10 +1,9 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
 
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  # rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   skip_before_action :verify_authenticity_token
 
-  before_action :authenticate_user!
   before_action :set_test, only: %i[ new create ]
   before_action :set_question, only: %i[ show edit update destroy ]
  
@@ -24,7 +23,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to @test 
+      redirect_to admin_test_path(@test) 
     else
       render :new
     end  
@@ -40,7 +39,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to test_path(@question.test) 
+    redirect_to admin_test_path(@question.test) 
   end
 
   private
