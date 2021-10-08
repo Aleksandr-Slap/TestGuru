@@ -14,7 +14,11 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP,
-                           message: "@ and '.' should be used" }
+                                                message: "@ and '.' should be used" }
+
+  def admin?
+    is_a?(Admin)
+  end                                                 
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
