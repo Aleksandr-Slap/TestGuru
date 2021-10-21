@@ -1,0 +1,137 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"  
+    label:    
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        body: "Ответ"
+        correct: "Корректность"
+      user:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        email: "Электронныя почта"
+        password: "Пароль"
+        password_confirmation: "Подтвердить пароль"
+    select:
+      prompt: "Выбрать категорию"  
+               
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки" 
+    nav:
+      welcome: "Добро пожаловать"
+      logout: "Выйти"                     
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: "Название"
+      level: "Сложность"
+      questions: "Вопросы"
+      actions: "Действия"
+    test:
+      button_start: "Старт"  
+
+  test_passages:
+    result:
+      header: "Тест %{title} завершён"
+      success: "Тест пройден успешно"
+      failure: "Тест не пройден"
+      back_tests: "Список всех тестов"
+    show:
+      passing: "Пройдите тест по %{test}" 
+      questions_num: "Всего вопросов %{size}" 
+      current_question_num: "Текущий вопрос %{num}"
+      next: "Дальше"
+
+  admin:
+    tests:
+      index:
+        header: "Доступные тесты" 
+        new_test: "Создать новый тест"
+        header: "Доступные тесты"
+        title: "Название"
+        level: "Сложность"
+        questions: "Вопросы"
+        actions: "Действия"
+      test:
+        show: "Показать тест" 
+        edit: "Обновить"
+        delete: "Удалить"
+        warning: "Удалить тест?"
+      show:
+        new_test: "Создать новый вопрос"
+        edit: "Обновить" 
+        back: "Назад" 
+        level: "Сложность:"
+      create:
+        success: "Тест успешно создан"
+      new:
+        create: "Создать новый тест" 
+        back: "Назад" 
+      edit:
+        edit: "Обновить тест"
+        back: "Назад"
+      update:
+        success: "Тест успешно обновлён"
+    questions:
+      question:
+        show: "Посмотреть вопрос"
+        edit: "Обновить"
+        delete: "Удалить" 
+        sure?: "Удалить вопрос?"
+      edit:
+        header: "Обновить вопрос" 
+        back: "Назад" 
+      show:
+        header: "Вопрос по"
+        answers: "Ответы"
+        new_answer: "Создать новый ответ"
+        back: "Назад"
+      new:
+        header: "Создать новый вопрос"
+        back: "Назад" 
+    answers:
+      answer:
+        show: "Посмотреть  ответ"
+        edit: "Обновить"
+        delete: "Удалить" 
+        sure?: "Удалить вопрос?"
+      edit:
+        header: "Обновить ответ" 
+        back: "Назад"
+      new:
+        create: "Создать новый ответ" 
+        back: "Назад"
+      show:
+        question: "Вопрос"
+        answer: "Ответ" 
+        correct: "Правильный ответ?" 
+        back: "Назад" 
+    nav:
+      admin_panel: "Панель администратора"
+      welcome: "Добро пожаловать"
+      logout: "Выйти"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru" 
+
