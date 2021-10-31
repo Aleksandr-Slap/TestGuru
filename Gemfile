@@ -33,6 +33,9 @@ gem 'devise', '~> 4.0'
 
 gem 'rails-i18n'
 
+# UI
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

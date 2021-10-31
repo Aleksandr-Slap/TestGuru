@@ -1,9 +1,15 @@
-<h1><%= t('.header', title: @test_passage.test.title) %> </h1>
+<div class="card text-center">   
+   <h1 class="card-header"><%= t('.header', title: @test_passage.test.title) %></h1>
 
-<h2> <% if @test_passage.passed_the_test? %> <h2>
-          <font color="#00FF00" ><%= t('.success') %></font>
-       <% else %>
-          <font color="#FF0000"><%= t('.failure') %></font>
-       <% end %> 
+   <p>
+     <h2><% if @test_passage.passed_the_test? %><h2>
+              <font color="#00FF00" ><%= t('.success') %></font>
+            <% else %>
+                <font color="#FF0000"><%= t('.failure') %></font>
+            <% end %>
+   </p>
 
-<p><%= link_to t('.back_tests'), tests_path %></p>
+   <p>
+     <%= link_to t('.back_tests'), tests_path %>
+   </p>  
+</div>  
