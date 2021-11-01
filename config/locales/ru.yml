@@ -38,7 +38,8 @@ ru:
         other: "Обнаружено %{count} ошибки" 
     nav:
       welcome: "Добро пожаловать"
-      logout: "Выйти"                     
+      logout: "Выйти"
+      admin_panel: "Панель администратора"                     
 
   tests:
     index:
