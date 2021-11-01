@@ -1,15 +1,18 @@
-<h1><%= t('.header') %></h1>
+<div class="card justify-content-center mt-3 border-primary">
+  <div class="card-body">    
+    <h1><%= t('.header') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.questions') %></th>
-    <th><%= t('.actions') %></th>
-  </tr>
-  
-  <%= render @tests %>
-</table> 
-
+    <table class="table table-bordered table-hover table-success table-striped text-center ">
+      <tr>
+        <th><%= t('.title') %></th>
+        <th><%= t('.level') %></th>
+        <th><%= t('.questions') %></th>
+        <th><%= t('.actions') %></th>
+      </tr>
+      <%= render @tests %>
+      
+    </table> 
+  </div>
+</div>
   
   

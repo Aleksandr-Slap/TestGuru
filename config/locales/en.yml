@@ -36,7 +36,8 @@ en:
         other: "%{count} errors detected" 
     nav:
       welcome: "Welcome"
-      logout: "Logout"             
+      logout: "Logout" 
+      admin_panel: "Admin Panel"            
 
   tests:
     index:

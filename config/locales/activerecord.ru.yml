@@ -30,5 +30,3 @@ ru:
     errors:
       messages:
         blank: "Не может быть пустым"
-
-        
