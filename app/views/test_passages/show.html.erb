@@ -21,6 +21,7 @@
          </p>
        <% end %>
 
+       <p><%= link_to "Save gist", gist_test_passage_path(@test_passage), method: :post %></p>
        <p><%= form.submit t('.next'), class: "btn btn-primary" %></p> 
     <% end %>
   </div>  

@@ -62,6 +62,9 @@ ru:
       questions_num: "Всего вопросов %{size}" 
       current_question_num: "Текущий вопрос %{num}"
       next: "Дальше"
+    gist:
+      success: "Gist успешно сохранён" 
+      failure: "Ошибка! Gist не сохранён!" 
 
   admin:
     tests:
