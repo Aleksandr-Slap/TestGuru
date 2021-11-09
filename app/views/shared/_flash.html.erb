@@ -1,5 +1,5 @@
 <div class="alert alert-success" role="alert">
   <% flash.each do |key, message|%>
-    <%= content_tag :p, message, class: "flash #{key}" %>
+    <%= content_tag :p, message.html_safe, class: "flash #{key}" %>
   <% end %> 
 </div>
