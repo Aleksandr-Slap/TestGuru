@@ -6,7 +6,7 @@ class GistsController < ApplicationController
 
     if client.success?
       flash[:notice] = "#{t(".success")} #{view_context.link_to(t(".find_here"), result.html_url, target: "_blank")}"    
-      Gist.create(url: result.html_url, user: current_user, question: @test_passage.current_question)
+      current_user.gists.create(url: result.html_url, user: current_user, question: @test_passage.current_question)
     else
       flash[:notice] = t(".unsuccess")
     end
