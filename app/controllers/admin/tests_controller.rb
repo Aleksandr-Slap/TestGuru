@@ -1,22 +1,20 @@
+# frozen_string_literal: true
+
+
 class Admin::TestsController < Admin::BaseController
-  
-  before_action :set_test, only: %i[ show edit update destroy start ]
+  before_action :set_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
-  end 
+  end
 
-  def show
-    
-  end 
+  def show; end
 
   def new
     @test = Test.new
   end
 
-  def edit
-    
-  end  
+  def edit; end
 
   def create
     @test = @current_user.my_tests.new(test_params)
@@ -25,7 +23,7 @@ class Admin::TestsController < Admin::BaseController
       redirect_to admin_tests_path, notice: t('.success')
     else
       render :new
-    end     
+    end
   end
 
   def update
@@ -39,7 +37,7 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
     redirect_to admin_tests_path
-  end 
+  end
 
   private
 
@@ -48,7 +46,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id) 
-  end 
-end   
+    params.require(:test).permit(:title, :level, :category_id)
+  end
+end
 
