@@ -33,6 +33,10 @@ gem 'devise', '~> 4.0'
 gem 'rubocop', '~> 1.15', require: false
 gem "octokit", "~> 4.0"
 
+#UI
+
+gem 'octicons_helper'
+
 # LOCALIZATION
 
 gem 'rails-i18n'
