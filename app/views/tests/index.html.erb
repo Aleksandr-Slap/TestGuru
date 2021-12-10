@@ -2,9 +2,13 @@
   <div class="card-body">    
     <h1><%= t('.header') %></h1>
 
-    <table class="table table-bordered table-hover table-success table-striped text-center ">
+    <table class="table table-bordered table-hover table-success table-striped text-center">
       <tr>
-        <th><%= t('.title') %></th>
+        <th class="sort-by-title pointer">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
         <th><%= t('.level') %></th>
         <th><%= t('.questions') %></th>
         <th><%= t('.actions') %></th>
