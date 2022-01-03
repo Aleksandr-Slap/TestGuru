@@ -100,6 +100,8 @@ ru:
         back: "Назад"
       update:
         success: "Тест успешно обновлён"
+      form_inline:
+        submit: 'Обновить'  
     questions:
       question:
         show: "Посмотреть вопрос"
@@ -152,4 +154,10 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru" 
+
+  # javascript:
+  #   utilities:
+  #     form_inline:
+  #       cansel: 'Выйти'
+  #       edit: 'Обновить'    
 

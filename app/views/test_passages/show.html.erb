@@ -6,6 +6,8 @@
       <%= t('.questions_num', size: @test_passage.test.questions.count) %>
       <%= t('.current_question_num', num: @test_passage.сurrent_question_number) %>      
     </p>
+
+    <%= progressbar_html %>
     
     <b>
       <%= @test_passage.current_question.body %>
