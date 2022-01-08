@@ -11,6 +11,6 @@ class Answer < ApplicationRecord
   private
 
   def limit_answers
-    errors.add(:question_id, 'One question cannot have more than 4 answers') if question.answers.size >= 4
+    errors.add(:question_id, 'cannot have more than 4 answers') if question.answers.size > 4
   end
 end
