@@ -295,6 +295,7 @@ DEPENDENCIES
   rails-i18n
   rubocop (~> 1.15)
   sass-rails (>= 6)
+  sassc-rails
   selenium-webdriver
   spring
   turbolinks (~> 5)

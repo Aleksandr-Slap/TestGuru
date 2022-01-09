@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.0'
 gem 'rubocop', '~> 1.15', require: false
 gem "octokit", "~> 4.0"
+gem 'sassc-rails'
 
 #UI
 
