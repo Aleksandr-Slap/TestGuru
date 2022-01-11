@@ -9,6 +9,12 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "bootstrap"
 
+require("../utilities/sorting")
+require("../utilities/password_confirmation")
+require("../utilities/form_inline")
+require("../utilities/progress_bar")
+require('jquery')
+
 
 Rails.start()
 Turbolinks.start()

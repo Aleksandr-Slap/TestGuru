@@ -6,6 +6,8 @@
       <%= t('.questions_num', size: @test_passage.test.questions.count) %>
       <%= t('.current_question_num', num: @test_passage.сurrent_question_number) %>      
     </p>
+
+    <%= progressbar_html %>
     
     <b>
       <%= @test_passage.current_question.body %>
@@ -21,6 +23,7 @@
          </p>
        <% end %>
 
+       <p><%= link_to "Save gist", gists_path(id: @test_passage.id), method: :post %></p>
        <p><%= form.submit t('.next'), class: "btn btn-primary" %></p> 
     <% end %>
   </div>  

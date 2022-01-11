@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,10 +17,12 @@ module TestGuru
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    config.encoding = "utf-8"
-    config.time_zone = "Moscow"
+    config.encoding = 'utf-8'
+    config.time_zone = 'Moscow'
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.i18n.default_locale = :ru
+
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

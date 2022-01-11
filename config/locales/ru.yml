@@ -63,6 +63,13 @@ ru:
       current_question_num: "Текущий вопрос %{num}"
       next: "Дальше"
 
+  gists:
+    create:
+      success: "Создан Gist!"
+      find_here: "Посмотреть по ссылке"
+      unsuccess: "Произошла ошибка, Gist не был создан"
+
+
   admin:
     tests:
       index:
@@ -93,6 +100,8 @@ ru:
         back: "Назад"
       update:
         success: "Тест успешно обновлён"
+      form_inline:
+        submit: 'Обновить'  
     questions:
       question:
         show: "Посмотреть вопрос"
@@ -126,13 +135,29 @@ ru:
         question: "Вопрос"
         answer: "Ответ" 
         correct: "Правильный ответ?" 
-        back: "Назад" 
+        back: "Назад"
+    gists:
+      gist:
+        delete: "Удалить Gist"
+      index:
+        back: "Назад"
+
     nav:
       admin_panel: "Панель администратора"
       welcome: "Добро пожаловать"
       logout: "Выйти"
 
+  gist_question_service:
+    description: "Вопрос с TestGuru о %{test}"
+
+
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru" 
+
+  # javascript:
+  #   utilities:
+  #     form_inline:
+  #       cansel: 'Выйти'
+  #       edit: 'Обновить'    
 

@@ -1,0 +1,9 @@
+<tr>
+  <td> <%= gist.user.email %> </td>
+  <td> <%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %> </td>
+  <td> <%= link_to_gist(gist.url) %> </td>
+  <td> <%= link_to admin_gist_path(gist), method: :delete, data: { confirm: "Are you sure?" }, :class => "btn btn-danger" do %>
+      <i class="bi bi-trash"> <%= t('.delete') %> </i>
+    <% end %>
+  </td>
+</tr>
