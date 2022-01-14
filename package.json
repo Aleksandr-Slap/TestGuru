@@ -16,5 +16,9 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^4.0.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Aleksandr-Slap/TestGuru.git",
+  "author": "<aleksandr-slap@rambler.ru>",
+  "license": "MIT"
 }
