@@ -7,7 +7,8 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import * as bootstrap from "bootstrap";
+
+require "bootstrap-sass"
 
 require("../utilities/sorting")
 require("../utilities/password_confirmation")
