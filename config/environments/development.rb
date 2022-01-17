@@ -80,5 +80,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   
   # Built-in source maps - to fix the error when deploying to heroku
-  config.sass.inline_source_maps = true
+  # config.sass.inline_source_maps = true
 end
