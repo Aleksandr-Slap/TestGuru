@@ -68,8 +68,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'pacific-river-73606.herokuapp.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
+    tls:                  true,
     address:              'smtp.gmail.com',
     port:                 587,
+    domain:               'gmail.com',
     user_name:            ENV['SMTP_USERNAME'],
     password:             ENV['SMTP_PASSWORD'],
     authentication:       'plain',
