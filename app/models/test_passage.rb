@@ -27,9 +27,13 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    if self.current_question.answers.size != 0
+      self.correct_questions += 1 if correct_answer?(answer_ids)
 
-    save!
+      save!
+    else 
+      save!
+    end  
   end
 
   private
@@ -39,7 +43,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.map(&:to_i).sort if answer_ids != nil
   end
 
   def correct_answers

@@ -1,0 +1,19 @@
+<h1> <%= t(".admin_message") %></h1>
+    
+<p>    
+  <%= form_with local: true do |form| %>
+    <p>
+      <%= form.text_area :message, placeholder: t(".message"), size: "50x5", required: true %>
+    </p>
+    <%= form.submit t(".send") %>
+  <% end %>
+</p>
+
+<p>      
+  <% if current_user.is_a?(Admin) %>
+    <%= link_to t(".back"), admin_tests_path %>
+  <% else %>
+    <%= link_to t(".back"), tests_path %>
+  <% end %>
+</p>
+

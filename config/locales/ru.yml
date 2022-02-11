@@ -69,6 +69,22 @@ ru:
       find_here: "Посмотреть по ссылке"
       unsuccess: "Произошла ошибка, Gist не был создан"
 
+  feed_back:
+    create:
+      success: "Сообщение успешно отправлено" 
+    index:
+        admin_message: "Ваше сообщение будет отправлено администратору" 
+        message: "Сообщение"   
+        send: "Отправить" 
+        back: "Назад" 
+  feed_back_mailer:
+    create:
+      message: "Сообщение от пользователя" 
+  shared:
+    footer:
+      progect: "проэкт для прохождения тестов по языкам програмирования"
+      description: "Учебный проект в онлайн-школе Thinknetica"  
+      feedback: "Обратная связь"       
 
   admin:
     tests:
@@ -141,6 +157,7 @@ ru:
         delete: "Удалить Gist"
       index:
         back: "Назад"
+
 
     nav:
       admin_panel: "Панель администратора"
