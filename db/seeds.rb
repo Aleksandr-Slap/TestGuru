@@ -1,57 +1,76 @@
 # frozen_string_literal: true
 
-Category.destroy_all
+Answer.destroy_all
+Question.destroy_all
+Test.destroy_all
+Category.destroy_all  
+
 
 categories = Category.create([
-                               { title: 'Frontend'},
-                               { title: 'Backend' }
-                             ])
+                              {title: "Backend"},
+                              {title: "Frontend"}
+                              ])
 
 p "Created #{Category.count} categories"
 
-User.destroy_all
+ 
 
-users = User.create!([
-                       { name: 'Sasha', password: 123456, password_confirmation: 123456, email: 'aleksandrslap@gmail.com' }
+tests = Test.create!([
+                     {title: "Ruby", category_id: categories[0].id},
+                     {title: "Python", category_id: categories[0].id},
+                     {title: "HTML", category_id: categories[1].id},
+                     {title: "C++", category_id: categories[0].id},
+                     {title: "CSS", category_id: categories[1].id}
                      ])
-
-p "Created #{User.count} users"
-
-Test.destroy_all
-
-tests = Test.create([
-                      { title: 'Ruby', level: 1, category_id: categories[1].id, user_id: users[0].id },
-                      { title: 'Rails', level: 2, category_id: categories[1].id, user_id: users[0].id },
-                      { title: 'HTML', level: 3, category_id: categories[0].id, user_id: users[0].id }
-                    ])
 
 p "Created #{Test.count} tests"
 
-Question.destroy_all
 
-questions = Question.create([
-                              { body: 'What is HTML?', test_id: tests[2].id },
-                              { body: 'Who created Ruby?', test_id: tests[0].id },
-                              { body: 'What language is Ruby on Rails written in?', test_id: tests[1].id }
-                            ])
+
+questions = Question.create!([
+                             {body: "Кто создал Ruby?", test_id: tests[0].id},
+                             {body: "Значение переменной Ruby по умолчанию", test_id: tests[0].id},
+                             {body: "Что вернёт метод .upcase", test_id: tests[0].id},
+
+                             {body: "Что такое Python", test_id: tests[1].id},
+                             {body: "Что лучше, Ruby или Python?", test_id: tests[1].id},
+
+                             {body: "С чем работает HTML?", test_id: tests[2].id},
+                             {body: "Главный инструмент HTML это:", test_id: tests[2].id},
+
+                             {body: "На сколько лёгкий язык С++ для начинающего?", test_id: tests[3].id},
+
+                             {body: "Для чего нужен CSS?", test_id: tests[4].id}
+                             ])
 
 p "Created #{Question.count} questions"
 
-Answer.destroy_all
 
-answers = Answer.create([
-                          { body: "Document markup language for web browsing in a browser",question_id: questions[0].id, correct: true},
-                          { body: "Database management system", question_id: questions[0].id }, 
-                           
-                          { body: "Matz", question_id: questions[1].id, correct: true },
-                          { body: "Bill Clinton", question_id: questions[1].id },
-                          { body: "Tovarich Stalin", question_id: questions[1].id },
-                          { body: "Mark Zuckerberg", question_id: questions[1].id },
-                          
-                          { body: "C++", question_id: questions[2].id}
-                          { body: "React", question_id: questions[2].id },
-                          { body: "Ruby", question_id: questions[2].id, correct: true },
-                        ])
-                           
+
+Answer.create([
+               {body: "Jo Rogan", question_id: questions[0].id},
+               {body: "Matz", correct: true, question_id: questions[0].id},
+               {body: "Sssha Sinihcin", question_id: questions[0].id},
+               {body: "Moy Batya", question_id: questions[0].id},
+               {body: "null", question_id: questions[1].id},
+               {body: "nil", correct: true, question_id: questions[1].id},
+               {body: "Table", question_id: questions[2].id},
+               {body: "TABLE",correct: true, question_id: questions[2].id},
+               {body: "table", question_id: questions[2].id},
+
+               {body: "Высокоуровневый язык программирования общего назначения", correct: true, question_id: questions[3].id},
+               {body: "Каскадные таблицы стилей", question_id: questions[3].id},
+               {body: "Адинакава", question_id: questions[4].id},
+               {body: "Конечно Ruby!", correct: true, question_id: questions[4].id},
+
+               {body: "С текстом", correct: true, question_id: questions[5].id},
+               {body: "Со стилями", question_id: questions[5].id},
+               {body: "Тэг, в который HTML заключает текст", correct: true, question_id: questions[6].id},
+               {body: "Методы ActiveRecord", question_id: questions[6].id},
+
+               {body: "Очень лёгкий!", correct: true, question_id: questions[7].id},
+               {body: "Не сложный", question_id: questions[7].id},
+               ])
+
 
 p "Created #{Answer.count} answers"
