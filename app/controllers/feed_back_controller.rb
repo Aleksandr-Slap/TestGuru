@@ -1,12 +1,11 @@
 class FeedBackController < ApplicationController
   before_action :authenticate_user!
 
-  def index; end 
+  def new; end 
 
   def create
-    @user = current_user
-    FeedBackMailer.create(params[:message], @user).deliver_now
+    FeedBackMailer.create(params[:message], current_user).deliver_now
     flash[:notice] = t(".success") 
-    render :index
+    render :new
   end
 end

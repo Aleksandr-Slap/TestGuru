@@ -11,17 +11,8 @@ module TestPassagesHelper
                             'aria-valuenow' => 0,
                             'role' => 'progressbar',
                             'style' => "width: 0%",
-                            data: { questions_max: question_max(@test_passage),
-                                    current_question_number: current_question_number(@test_passage) }),
+                            data: { questions_max: @test_passage.question_max,
+                                    current_question_number: @test_passage.current_question_number }),
                 class: 'progress')
   end
-  
-  def question_max(test_passage)
-    test_passage.test.questions.size
-  end 
-
-  def current_question_number(test_passage)
-    test_passage.test.questions.find_index(test_passage.current_question)
-  end 
-
 end

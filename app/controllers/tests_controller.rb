@@ -9,7 +9,7 @@ class TestsController < ApplicationController
   end
 
   def start
-    unless @test.questions.empty?
+    if @test.questions.present?
       current_user.tests.push(@test)
       redirect_to current_user.test_passage(@test)
     else 

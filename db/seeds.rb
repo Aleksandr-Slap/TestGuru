@@ -16,11 +16,11 @@ p "Created #{Category.count} categories"
  
 
 tests = Test.create!([
-                     {title: "Ruby", category_id: categories[0].id},
-                     {title: "Python", category_id: categories[0].id},
-                     {title: "HTML", category_id: categories[1].id},
-                     {title: "C++", category_id: categories[0].id},
-                     {title: "CSS", category_id: categories[1].id}
+                     {title: "Ruby", category_id: categories[0].id, ready: true},
+                     {title: "Python", category_id: categories[0].id, ready: true},
+                     {title: "HTML", category_id: categories[1].id, ready: true},
+                     {title: "C++", category_id: categories[0].id, ready: true},
+                     {title: "CSS", category_id: categories[1].id, ready: true}
                      ])
 
 p "Created #{Test.count} tests"

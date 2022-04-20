@@ -31,5 +31,5 @@ Rails.application.routes.draw do
 
   resources :gists, only: :create
 
-  resources :feed_back, only: %i[index create]
+  resources :feed_back, only: %i[new create]
 end

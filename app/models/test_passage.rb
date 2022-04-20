@@ -3,7 +3,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: 'Question', optional: true       
+  belongs_to :current_question, class_name: 'Question', optional: true, dependent: :destroy     
 
   before_validation :set_first_question, on: :create
   before_validation :assign_next_question, on: :update
@@ -29,11 +29,16 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     if self.current_question.answers.size != 0
       self.correct_questions += 1 if correct_answer?(answer_ids)
+    end
+    save!  
+  end
 
-      save!
-    else 
-      save!
-    end  
+  def question_max
+    self.test.questions.size
+  end 
+
+  def current_question_number
+    self.test.questions.find_index(self.current_question)
   end
 
   private
@@ -57,4 +62,6 @@ class TestPassage < ApplicationRecord
   def assign_next_question
     self.current_question = next_question
   end
+
+
 end
