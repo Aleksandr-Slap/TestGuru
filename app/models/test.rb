@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
-  has_many :test_passages
-  has_many :users, through: :test_passages
-  has_many :questions
+  has_many :test_passages, dependent: :destroy
+  has_many :questions, dependent: :destroy
+  has_many :users, through: :test_passages, dependent: :destroy
+
   belongs_to :category
-  belongs_to :author, class_name: 'User', foreign_key: :user_id
+  belongs_to :author, class_name: 'User', foreign_key: :user_id, optional: true
 
   validates :title, :level, presence: true
   validates :level, numericality: { only_integer: true, greater_than: -1 }

@@ -1,6 +1,8 @@
-<div class="row justify-content-center mt-3">
-  <p><%= this_year %> Slapoguzov Aleksandr, <%= github_url("Aleksandr-Slap", "TestGuru") %> <br></a>
-  Проект для проверки и закрепления знаний в области языков<br> програмирования и фреймворков для работы с ними.<br>
-  <a href="https://thinknetica.com/">Учебный проект в онлайн-школе Thinknetica</a>
-  </p>
-</div>    
+<div class="footer"> 
+  <ul> 
+    <li><%= this_year %> Slapoguzov Aleksandr, <%= github_url("Aleksandr-Slap", "TestGuru") %> </li>
+    <li>TestGuru - <%= t(".progect") %></li>
+    <li><a href="https://thinknetica.com/"><%= t(".description") %></a></li>
+    <li><%= link_to t(".feedback"), new_feed_back_path %> </li>  
+  </ul>      
+</div>     

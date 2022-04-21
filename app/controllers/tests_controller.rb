@@ -9,8 +9,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    if @test.questions.present?
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test)
+    else 
+      redirect_to root_path, alert: 'У данного теста пока нет вопросов'
+    end  
   end
 
   private

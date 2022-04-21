@@ -1,4 +1,4 @@
-class GistsController < ApplicationController
+class GistsController < ApplicationController 
   def create
     @test_passage = TestPassage.find(params[:id])
     client = GistQuestionService.new(@test_passage.current_question)

@@ -6,10 +6,11 @@ document.addEventListener('turbolinks:load', function() {
 
 function fillProgressBar(control) {
   let questionsMax = control.dataset.questionsMax
-  let currentQuestionNumber = control.dataset.currentQuestionNumber + 1
+  let currentQuestionNumber = control.dataset.currentQuestionNumber
+  currentQuestionNumber ++
   
   let progress = currentQuestionNumber / questionsMax * 100
 
   control.style.width = progress + "%"
-  control.textContent = Math.round(progress) + "%"
+  control.textContent = Math.round(progress) + "%" 
 }

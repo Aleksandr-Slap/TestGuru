@@ -62,14 +62,31 @@ en:
       next: "Next" 
     gist:
       success: "Gist was successfully created" 
-      failure: "An error occurred while saving gist"       
+      failure: "An error occurred while saving gist" 
+
+  feed_back:
+    create:
+      success: "Message sent successfully"   
+    index:
+        admin_message: "Your message will be sent to the administrator"  
+        message: "Message"  
+        send: "Send" 
+        back: "Back"
+  feed_back_mailer:
+    create:
+      message: "Message from user"
+  shared:
+    footer:
+      progect: "project for passing tests in programming languages"
+      description: "Educational project in an online school Thinknetica" 
+      feedback: "Feed back"                     
  
   admin:
     tests:
       index:
         header: "Tricky tests" 
         new_test: "New test"
-        header: "Доступные тесты"
+        header: "Available tests"
         title: "Title"
         level: "Level"
         questions: "Questions"
