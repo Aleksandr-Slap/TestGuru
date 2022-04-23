@@ -1,0 +1,18 @@
+<h1>Create new Badge</h1>
+
+<%= form_with model: @badge do |form| %>
+
+  <%= render "shared/errors", resource: @badge %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  
+  <p>  
+    <%= form.label :image %><br>
+    <%= form.file_field :image %>
+  </p>
+  
+  <p><%= form.submit %></p> 
+<% end %>
