@@ -6,7 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true, dependent: :destroy     
 
   before_validation :set_first_question, on: :create
-  before_validation :assign_next_question, on: :update
+  before_validation :assign_next_question, on: :update 
 
   TEST_PASS_PERCENTAGE = 85
 
@@ -29,6 +29,7 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     if self.current_question.answers.size != 0
       self.correct_questions += 1 if correct_answer?(answer_ids)
+      self.passed = true if passed_the_test?
     end
     save!  
   end

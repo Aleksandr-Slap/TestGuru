@@ -1,5 +1,21 @@
 <h1>All Badges</h1>
 
 <p>
-  <%= render "bages" %>
-</p>  
+  <%= render @badges %>
+</p> 
+
+<h2>Your badges</h2>
+
+
+<% @user_badges.each do |badge| %>
+  <p>
+    <b><%= badge.title %></b><br>
+    <%= image_tag(badge.image, style: 'width:10%') %>
+  </p>  
+<% end %>  
+
+
+<p><%= link_to "Back", tests_path %></p>  
+
+
+

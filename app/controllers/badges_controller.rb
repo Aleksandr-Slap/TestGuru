@@ -1,6 +1,7 @@
 class BadgesController < ApplicationController
   def index
     @badges = Badge.all
+    @user_badges = Badge.where(id: current_user.badges.ids.uniq)
   end 
 
   def show

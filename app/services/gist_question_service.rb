@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-
 class GistQuestionService
 
   def initialize(question, client: nil)
