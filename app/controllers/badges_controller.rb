@@ -1,7 +1,7 @@
 class BadgesController < ApplicationController
   def index
     @badges = Badge.all
-    @user_badges = Badge.where(id: current_user.badges.ids.uniq)
+    @user_badges = current_user.badges
   end 
 
   def show
@@ -25,6 +25,6 @@ class BadgesController < ApplicationController
   private
 
   def badge_params
-    params.require(:badge).permit(:title, :image)
+    params.require(:badge).permit(:title, :image, :rule_name, :rule_value)
   end  
 end

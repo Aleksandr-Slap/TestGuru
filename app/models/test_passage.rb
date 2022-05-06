@@ -23,13 +23,18 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? 
+  end
+
+  def successful_completion?
+    if self.passed_the_test?
+      self.update_attribute(:passed, true)
+    end  
   end
 
   def accept!(answer_ids)
     if self.current_question.answers.size != 0
       self.correct_questions += 1 if correct_answer?(answer_ids)
-      self.passed = true if passed_the_test?
     end
     save!  
   end
