@@ -1,0 +1,25 @@
+<h1>All Badges</h1>
+
+<p>
+  <% if @badges.present? %>
+   <%= render @badges %>
+  <% else %>
+    <b>Нет бейджей</b>
+  <% end %>   
+</p> 
+
+<h2>Your badges</h2>
+
+<% if @user_badges.present? %>
+  <% @user_badges.each do |badge| %>
+    <p>
+      <b><%= badge.title %></b><br>
+      <%= image_tag(badge.image, style: 'width:10%') %>
+    </p>  
+  <% end %>
+  <% else %>
+    <b>У вас пока нет бейджей</b>  
+<% end %>  
+
+
+<p><%= link_to "Back", admin_tests_path %></p>  

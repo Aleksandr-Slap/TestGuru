@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_05_093731) do
+ActiveRecord::Schema.define(version: 2022_04_27_121158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,13 +53,11 @@ ActiveRecord::Schema.define(version: 2022_05_05_093731) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "title"
-    t.bigint "user_id"
+    t.string "title", null: false
+    t.string "rule_name", null: false
+    t.string "rule_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "rule_name"
-    t.string "rule_value"
-    t.index ["user_id"], name: "index_badges_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -146,7 +144,6 @@ ActiveRecord::Schema.define(version: 2022_05_05_093731) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "badges", "users"
   add_foreign_key "gists", "questions"
   add_foreign_key "gists", "users"
   add_foreign_key "test_passages", "questions", column: "current_question_id"
