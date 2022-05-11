@@ -13,8 +13,7 @@
 <% if @user_badges.present? %>
   <% @user_badges.each do |badge| %>
     <p>
-      <b><%= badge.title %></b><br>
-      <%= image_tag(badge.image, style: 'width:10%') %>
+      <%= render @badges %>
     </p>  
   <% end %>
   <% else %>
