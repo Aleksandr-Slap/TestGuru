@@ -8,6 +8,8 @@ class TestPassage < ApplicationRecord
   before_validation :set_first_question, on: :create
   before_validation :assign_next_question, on: :update 
 
+  scope :successful, -> { where(passed: true) }
+
   TEST_PASS_PERCENTAGE = 85
 
   def passed_the_test?

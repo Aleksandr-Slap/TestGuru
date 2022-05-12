@@ -23,32 +23,36 @@ class CheckBadge
   end  
 
   def test_passage_first?(nothing)
-    number_of_passes = TestPassage.where(user_id: @user.id)
-                                  .where(test_id: @test.id).count
+    number_of_passes = TestPassage.where(user_id: @user.id, test_id: @test.id)
+                                  .count
     number_of_passes == 1                                   
   end
 
   def passed_all_category?(category)
-    test_ids = Test.show_tests(category).ids
-    test_category_id = @test.category.id
-    id_category = Category.find_by(title: category).id
-    passed_tests_of_one_category = TestPassage.where(test_id: test_ids)
-                                              .where(user_id: @user.id)
-                                              .where(passed: true)
-                                              .pluck(:test_id)
-                                              .uniq.count
 
-    passed_tests_of_one_category == test_ids.count && test_category_id == id_category
+    return false if @test.category.title != category
+
+    test_ids = Test.show_tests(category).ids
+    passed_tests_of_one_category = TestPassage.where(test_id: test_ids, user_id: @user.id)
+                                              .successful
+                                              .pluck(:test_id)
+                                              .uniq
+                                              .count
+                                              
+
+    passed_tests_of_one_category == test_ids.count
   end
 
   def passed_one_level_tests?(level)
+
+    return false if @test.level != level.to_i
+
     test_ids = Test.where(level: level.to_i).ids
-    test_level_id = @test.level
-    passed_tests_of_the_same_level = TestPassage.where(test_id: test_ids)
-                                                .where(user_id: @user.id).where(passed: true)
+    passed_tests_of_the_same_level = TestPassage.where(test_id: test_ids, user_id: @user.id,)
+                                                .successful
                                                 .pluck(:test_id)
                                                 .uniq.count
    
-    passed_tests_of_the_same_level == test_ids.count && test_level_id == level.to_i
+    passed_tests_of_the_same_level == test_ids.count
   end
 end

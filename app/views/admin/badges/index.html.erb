@@ -11,11 +11,9 @@
 <h2>Your badges</h2>
 
 <% if @user_badges.present? %>
-  <% @user_badges.each do |badge| %>
-    <p>
-      <%= render @badges %>
-    </p>  
-  <% end %>
+  <p>
+    <%= render @user_badges %>
+  </p>  
   <% else %>
     <b>У вас пока нет бейджей</b>  
 <% end %>  
