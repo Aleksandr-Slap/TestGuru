@@ -6,7 +6,9 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true, dependent: :destroy     
 
   before_validation :set_first_question, on: :create
-  before_validation :assign_next_question, on: :update
+  before_validation :assign_next_question, on: :update 
+
+  scope :successful, -> { where(passed: true) }
 
   TEST_PASS_PERCENTAGE = 85
 
@@ -23,7 +25,13 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? 
+  end
+
+  def successful_completion?
+    if self.passed_the_test?
+      self.update_attribute(:passed, true)
+    end  
   end
 
   def accept!(answer_ids)
