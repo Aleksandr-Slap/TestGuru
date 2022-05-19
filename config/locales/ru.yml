@@ -47,6 +47,7 @@ ru:
       title: "Название"
       level: "Сложность"
       questions: "Вопросы"
+      timer: "Таймер(мин)"
       actions: "Действия"
     test:
       button_start: "Старт"  
@@ -60,7 +61,9 @@ ru:
     show:
       passing: "Пройдите тест по %{test}" 
       questions_num: "Всего вопросов %{size}" 
+      timer: "Осталось времени:"
       current_question_num: "Текущий вопрос %{num}"
+      save_gist: "Создать Gist"
       next: "Дальше"
 
   gists:
@@ -84,7 +87,8 @@ ru:
     footer:
       progect: "проэкт для прохождения тестов по языкам програмирования"
       description: "Учебный проект в онлайн-школе Thinknetica"  
-      feedback: "Обратная связь"       
+      feedback: "Обратная связь" 
+      badges: "Мои награды"      
 
   admin:
     tests:
@@ -95,7 +99,10 @@ ru:
         title: "Название"
         level: "Сложность"
         questions: "Вопросы"
+        timer: "Таймер"
         actions: "Действия"
+        gist: "Посмотреть все Gists"
+        new_badge: "Создать награду"
       test:
         show: "Показать тест" 
         edit: "Обновить"

@@ -15,6 +15,8 @@ en:
         title: "Title"
         level: "Level"
         category_id: "Category"
+        timer: "Timer"
+        ready: "Ready"
       question:
         title: "Title"
       answer:
@@ -44,7 +46,8 @@ en:
       header: "Tricky tests"
       title: "Title"
       level: "Level"
-      questions: "Questions"
+      questions: "Questions" 
+      timer: "Timer" 
       actions: "Action"
     test:
       button_start: "Start"
@@ -57,8 +60,10 @@ en:
       back_tests: "List of all tests"
     show:
       passing: "Take the test on %{test}" 
-      questions_num: "Total questions %{size}" 
+      questions_num: "Total questions %{size}"
+      timer: "Time left:" 
       current_question_num: "Current question %{num}"
+      save_gist: "Create Gist"
       next: "Next" 
     gist:
       success: "Gist was successfully created" 
@@ -79,7 +84,8 @@ en:
     footer:
       progect: "project for passing tests in programming languages"
       description: "Educational project in an online school Thinknetica" 
-      feedback: "Feed back"                     
+      feedback: "Feed back" 
+      badges: "Badges"                    
  
   admin:
     tests:
@@ -90,7 +96,10 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
+        timer: "Timer"
         actions: "Actions"
+        gist: "Look all Gists"
+        new_badge: "Create Badge"
       test:
         show: "Show" 
         edit: "Update"

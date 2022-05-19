@@ -13,6 +13,7 @@ require("../utilities/sorting")
 require("../utilities/password_confirmation")
 require("../utilities/form_inline")
 require("../utilities/progress_bar")
+require("time_bar")
 require('jquery')
 
 
