@@ -47,7 +47,6 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    return if time_up?
     if self.current_question.answers.size != 0
       self.correct_questions += 1 if correct_answer?(answer_ids)
     end
