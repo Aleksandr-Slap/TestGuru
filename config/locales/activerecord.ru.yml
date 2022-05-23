@@ -12,6 +12,8 @@ ru:
         title: "Название"
         level: "Уровень"
         category: "Категория"
+        timer: "Таймер"
+        ready: "Готов"
         author: "Автор"
       users:
         first_name: "Имя"

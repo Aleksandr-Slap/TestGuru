@@ -25,7 +25,19 @@ class TestPassage < ApplicationRecord
   end
 
   def completed?
-    current_question.nil? 
+    current_question.nil? || time_up?
+  end
+
+  def time_up?
+    timer_exists? ? false : time_to_pass_test <= Time.now
+  end
+
+  def time_to_pass_test
+    (created_at + test.timer.minutes).httpdate
+  end
+
+  def timer_exists?
+    test.timer.nil?
   end
 
   def successful_completion?

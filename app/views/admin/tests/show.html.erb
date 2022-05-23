@@ -1,5 +1,9 @@
 <h1><%= @test.title %></h1>
-<h2><%= t('.level') %> <%= @test.level %></h2><br>
+<h2>
+  <%= t('.level') %> <%= @test.level %><br>
+  <%= t(".timer")%> <%= @test.timer %>
+  
+</h2>
 <%= link_to t('.new_test'), new_admin_test_question_path(@test)%>
 
 <ol>
